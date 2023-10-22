@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityTests.build/master.swiftdeps"
+  },
+  "/Users/noahkamara/Downloads/Gazette/Readability/Tests/ReadabilityTests/ReadabilityTests.swift": {
+    "dependencies": "/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityTests.build/ReadabilityTests.d",
+    "object": "/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityTests.build/ReadabilityTests.swift.o",
+    "swiftmodule": "/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityTests.build/ReadabilityTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityTests.build/ReadabilityTests.swiftdeps"
+  }
+}

@@ -1,0 +1,91 @@
+client:
+  name: basic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "Readability-debug.module": ["<Readability-debug.module>"]
+  "ReadabilityPackageTests-debug.test": ["<ReadabilityPackageTests-debug.test>"]
+  "ReadabilityTests-debug.module": ["<ReadabilityTests-debug.module>"]
+  "main": ["<Readability-debug.module>"]
+  "test": ["<Readability-debug.module>","<ReadabilityPackageTests-debug.test>","<ReadabilityTests-debug.module>"]
+default: "main"
+nodes:
+  "/Users/noahkamara/Downloads/Gazette/Readability/Sources/Readability/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/noahkamara/Downloads/Gazette/Readability/Tests/ReadabilityTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability_Readability.bundle/readability.js":
+    tool: copy-tool
+    inputs: ["/Users/noahkamara/Downloads/Gazette/Readability/Sources/Readability/readability.js"]
+    outputs: ["/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability_Readability.bundle/readability.js"]
+    description: "Copying /Users/noahkamara/Downloads/Gazette/Readability/Sources/Readability/readability.js"
+
+  "<Readability-debug.module>":
+    tool: phony
+    inputs: ["/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/JSTimer.swift.o","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/Readability.swift.o","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/resource_bundle_accessor.swift.o","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.swiftmodule"]
+    outputs: ["<Readability-debug.module>"]
+
+  "<ReadabilityPackageTests-debug.test>":
+    tool: phony
+    inputs: ["/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityPackageTests.xctest/Contents/MacOS/ReadabilityPackageTests"]
+    outputs: ["<ReadabilityPackageTests-debug.test>"]
+
+  "<ReadabilityTests-debug.module>":
+    tool: phony
+    inputs: ["/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityTests.build/ReadabilityTests.swift.o","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityTests.swiftmodule"]
+    outputs: ["<ReadabilityTests-debug.module>"]
+
+  "C.Readability-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/noahkamara/Downloads/Gazette/Readability/Sources/Readability/JSTimer.swift","/Users/noahkamara/Downloads/Gazette/Readability/Sources/Readability/Readability.swift","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/DerivedSources/resource_bundle_accessor.swift","<Readability-debug.module-resources>"]
+    outputs: ["/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/JSTimer.swift.o","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/Readability.swift.o","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/resource_bundle_accessor.swift.o","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.swiftmodule"]
+    executable: "/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "Readability"
+    module-output-path: "/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.swiftmodule"
+    import-paths: ["/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug"]
+    temps-path: "/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build"
+    objects: ["/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/JSTimer.swift.o","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/Readability.swift.o","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/resource_bundle_accessor.swift.o"]
+    other-args: ["-target","arm64-apple-macosx14.0","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-g","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/Readability-Swift.h","-sdk","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk","-F","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-Xcc","-isysroot","-Xcc","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk","-Xcc","-F","-Xcc","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-package-name","readability"]
+    sources: ["/Users/noahkamara/Downloads/Gazette/Readability/Sources/Readability/JSTimer.swift","/Users/noahkamara/Downloads/Gazette/Readability/Sources/Readability/Readability.swift","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/DerivedSources/resource_bundle_accessor.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 8
+
+  "C.ReadabilityPackageTests-debug.test":
+    tool: shell
+    inputs: ["/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/JSTimer.swift.o","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/Readability.swift.o","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/resource_bundle_accessor.swift.o","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityTests.build/ReadabilityTests.swift.o"]
+    outputs: ["/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityPackageTests.xctest/Contents/MacOS/ReadabilityPackageTests"]
+    description: "Linking /Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityPackageTests.xctest/Contents/MacOS/ReadabilityPackageTests"
+    args: ["/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug","-o","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityPackageTests.xctest/Contents/MacOS/ReadabilityPackageTests","-module-name","ReadabilityPackageTests","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityPackageTests.product/Objects.LinkFileList","-target","arm64-apple-macosx14.0","-Xlinker","-add_ast_path","-Xlinker","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityTests.swiftmodule","-sdk","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk","-F","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib"]
+
+  "C.ReadabilityTests-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/noahkamara/Downloads/Gazette/Readability/Tests/ReadabilityTests/ReadabilityTests.swift","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.swiftmodule"]
+    outputs: ["/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityTests.build/ReadabilityTests.swift.o","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityTests.swiftmodule"]
+    executable: "/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "ReadabilityTests"
+    module-output-path: "/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityTests.swiftmodule"
+    import-paths: ["/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug"]
+    temps-path: "/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityTests.build"
+    objects: ["/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ReadabilityTests.build/ReadabilityTests.swift.o"]
+    other-args: ["-target","arm64-apple-macosx14.0","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-g","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-sdk","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk","-F","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-Xcc","-isysroot","-Xcc","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk","-Xcc","-F","-Xcc","/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-package-name","readability"]
+    sources: ["/Users/noahkamara/Downloads/Gazette/Readability/Tests/ReadabilityTests/ReadabilityTests.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 8
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/noahkamara/Downloads/Gazette/Readability/Sources/Readability/","/Users/noahkamara/Downloads/Gazette/Readability/Tests/ReadabilityTests/","/Users/noahkamara/Downloads/Gazette/Readability/Package.swift","/Users/noahkamara/Downloads/Gazette/Readability/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
+  "Readability-debug.module-resources":
+    tool: phony
+    inputs: ["/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability_Readability.bundle/readability.js"]
+    outputs: ["<Readability-debug.module-resources>"]
+

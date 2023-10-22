@@ -1,0 +1,20 @@
+---
+path:            '/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/14.0/Darwin.swiftmodule/arm64e-apple-macos.swiftmodule'
+dependencies:
+  - mtime:           1696597037330500048
+    path:            '/Applications/Xcode-15.1.0-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/14.0/Darwin.swiftmodule/arm64e-apple-macos.swiftmodule'
+    size:            141324
+  - mtime:           1696597037233847300
+    path:            'usr/lib/swift/Swift.swiftmodule/arm64e-apple-macos.swiftinterface'
+    size:            2073819
+    sdk_relative:    true
+  - mtime:           1696597009864628989
+    path:            'usr/include/Darwin.apinotes'
+    size:            1133
+    sdk_relative:    true
+  - mtime:           1696597037236783117
+    path:            'usr/lib/swift/Darwin.swiftmodule/arm64e-apple-macos.swiftinterface'
+    size:            25395
+    sdk_relative:    true
+version:         1
+...

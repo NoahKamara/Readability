@@ -1,0 +1,4 @@
+module Readability {
+    header "/Users/noahkamara/Downloads/Gazette/Readability/.build/arm64-apple-macosx/debug/Readability.build/Readability-Swift.h"
+    requires objc
+}

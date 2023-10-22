@@ -1,0 +1,39 @@
+{
+  "name": "readabilityjs",
+  "version": "1.0.0",
+  "description": "A Wrapper for @mozilla/readability",
+  "main": "index.js",
+  "watch": {
+    "build-and-copy": {
+      "patterns": [
+        "src/index.js",
+        "package.json"
+      ],
+      "quiet": false
+    }
+  },
+  "browserify": {
+    "jquery": "jquery-browserify"
+  },
+  "scripts": {
+    "clean-install": "rm -rf node_modules; rm package-lock.json; rm -rf dist/*; npm install",
+    "build": "rm -rf dist/*.js*; browserify src/index.js -o dist/readability.js",
+    "copy": "cp dist/readability.js ../Sources/Readability/readability.js",
+    "build-and-copy": "npm run build; npm run copy",
+    "test": "npm run build-and-copy; swift test",
+    "watch": "npm-watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "esmify": "^2.1.1",
+    "npm-watch": "^0.11.0",
+    "watchify": "^4.0.0"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.4.4",
+    "fastestsmallesttextencoderdecoder": "^1.0.22",
+    "jsdom": "^19.0.0"
+  }
+}
